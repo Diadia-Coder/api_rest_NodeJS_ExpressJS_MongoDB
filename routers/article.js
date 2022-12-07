@@ -13,6 +13,6 @@ route.post('/', (req, res) => {
 });
 route.get('/:id',articleCtrl.getIDArticle);
 //route.post('/', articleCtrl.updateArticle);
-route.delete('/:id',articleCtrl.deleteArticle);
+route.delete('/delete/:id',articleCtrl.deleteArticle);
 
 module.exports=route;

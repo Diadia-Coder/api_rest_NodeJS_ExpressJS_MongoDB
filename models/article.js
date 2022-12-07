@@ -20,11 +20,11 @@ const articleModel=mongoose.Schema({
     },
 
     date_creation:{
-        type: Date,
-        required: true
+        type: String,
+        default: new Date()
     },
     date_mise_jour:{
-        type: Date,
+        type: String,
         required: true
     }
 });

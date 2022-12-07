@@ -88,13 +88,10 @@ exports.getIDArticle=(req, res) => {
 }
 //Supprrimer un Article
 exports.deleteArticle=(req, res) => {
-    const id = req.params._id;
-    Article.deleteOne({_id:id})
-    .then((article)=>{
-        return res.status(200).json(article);
-    })
-    .catch((error)=>{
-        return res.status(501).json(error);
-    })
-
+    Article.findByIdAndRemove(req.params.id, (err, doc) => {
+        if (!err) {
+            res.redirect('/article/list');
+        }
+        else { console.log('Erreur :' + err); }
+    });
 }
