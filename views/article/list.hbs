@@ -1,31 +1,31 @@
 
 <h3><a class="btn btn-secondary" href="/article"><i class="fa fa-plus"></i> Create New</a> Listes des Articles</h3>
 <table class="table table-striped">
-<thead>
-    <tr>
-        <th>Titre</th>
-        <th>Resumer</th>
-        <th>Contenu</th>
-        <th>Auteur</th>
-        <th>Date de Creation</th>
-        <th>Date mise à jour</th>
-        <th>Action</th>
-    </tr>
-</thead>
-<tbody>
-    {{#each list}}
+    <thead>
         <tr>
-            <td>{{this.titre}}</td>
-            <td>{{this.resumer}}</td>
-            <td>{{this.contenu}}</td>
-            <td>{{this.auteur}}</td>
-            <td>{{this.date_creation}}</td>
-            <td>{{this.date_mise_jour}}</td>
-            <td>
-                <a href="/article/{{this.id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
-                <a href="/article/delete/{{this._id}}" onclick="return confirm('Voulez-vous vraiment suprimer ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
-            </td>
+            <th>Titre</th>
+            <th>Resumer</th>
+            <th>Contenu</th>
+            <th>Auteur</th>
+            <th>Date de Creation</th>
+            <th>Date mise à jour</th>
+            <th>Action</th>
         </tr>
-    {{/each}}
-</tbody>
+    </thead>
+    <tbody>
+        {{#each list}}
+            <tr>
+                <td>{{this.titre}}</td>
+                <td>{{thisresumer}}</td>
+                <td>{{this.contenu}}</td>
+                <td>{{this.auteur}}</td>
+                <td>{{this.date_creation}}</td>
+                <td>{{this.date_mise_jour}}</td>
+                <td>
+                    <a href="/article/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                    <a href="/article/delete/{{this._id}}" onclick="return confirm('Voulez-vous vraiment suprimer ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
 </table>

@@ -19,24 +19,21 @@ exports.createArticle = (req,res)=>{
 //Afficher des Article
 exports.getAllArticle=(req,res)=>{
     Article.find()
-    .then((Article)=>{
-        //return res.status(200).json(Article);
-        return res.render("article/list", {
-                   list: Article
-                });
+    .then((article)=>{
+        //return res.status(200).json(article);
+        return res.render("article/list", { list : article });
     })
     .catch((error)=>{
         return res.status(501).json(error);
     })
-        
-        // if (!err) {
-        //     res.render("article/list", {
-        //         list: docs
-        //     });
-        // }
-        // else {
-        //     console.log('Erreur de Supression :' + err);
-        // }
+    // if (!err) {
+    //     res.render("article/list", {
+    //         list: docs
+    //     });
+    // }
+    // else {
+    //     console.log('Erreur de Supression :' + err);
+    // }
 }
 //Inserer un Article
 exports.insertArticle=(req,res)=>{
